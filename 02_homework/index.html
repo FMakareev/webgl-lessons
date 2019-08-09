@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<canvas id="canvasGL" style="border:solid;" width="400" height="400"></canvas>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+    attribute vec4 a_Position;
+    attribute float a_PointSize;
+
+    void main(){
+        gl_PointSize = a_PointSize;
+        gl_Position = a_Position;
+    }
+
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+    precision mediump float;
+
+    void main(){
+        gl_FragColor = vec4(1.0, 0.7, 0.0, 1.0);
+    }
+</script>
+
+
+<script src="index.js" ></script>
+</body>
+</html>
